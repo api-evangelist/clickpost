@@ -1,0 +1,121 @@
+# Naftiko capabilities profile for ClickPost.
+# Capabilities are derived from ClickPost API documentation at
+# docs.clickpost.ai.
+provider: clickpost
+name: ClickPost
+description: >-
+  ClickPost is a multi-carrier logistics aggregator providing tracking,
+  carrier recommendation, manifesting, NDR management, returns, and
+  serviceability through a unified REST API.
+capabilities:
+  - id: clickpost.carrier.recommend
+    name: Recommend carrier
+    description: Suggest the optimal carrier for a shipment based on origin, destination, weight, and SLAs.
+    inputs:
+      - api-key
+      - origin
+      - destination
+      - weight
+      - service-level
+    outputs:
+      - carriers
+  - id: clickpost.order.create
+    name: Create order
+    description: Create a single-piece (SPS) or multi-piece (MPS) shipment order with the selected carrier.
+    inputs:
+      - api-key
+      - order
+      - carrier
+    outputs:
+      - waybill
+      - awb-number
+  - id: clickpost.order.cancel
+    name: Cancel order
+    description: Cancel a previously created shipment.
+    inputs:
+      - api-key
+      - waybill
+    outputs:
+      - status
+  - id: clickpost.serviceability.check
+    name: Check serviceability
+    description: Check whether a pincode or drop location is serviceable by the available carriers.
+    inputs:
+      - api-key
+      - pincode
+      - drop-location
+    outputs:
+      - serviceable
+      - carriers
+  - id: clickpost.tracking.poll
+    name: Track shipment by polling
+    description: Retrieve current tracking status and history for one or more waybills.
+    inputs:
+      - api-key
+      - waybills
+    outputs:
+      - tracking-events
+  - id: clickpost.tracking.webhook
+    name: Subscribe to tracking webhook
+    description: Configure a webhook URL to receive real-time tracking status updates for shipments.
+    inputs:
+      - api-key
+      - webhook-url
+      - events
+    outputs:
+      - subscription-id
+  - id: clickpost.manifest.create
+    name: Generate manifest
+    description: Generate a carrier manifest document for a batch of shipments.
+    inputs:
+      - api-key
+      - waybills
+    outputs:
+      - manifest-url
+  - id: clickpost.pickup.request
+    name: Request pickup
+    description: Schedule a carrier pickup for one or more shipments.
+    inputs:
+      - api-key
+      - location
+      - waybills
+      - slot
+    outputs:
+      - pickup-id
+  - id: clickpost.ndr.update
+    name: Update NDR action
+    description: Submit a non-delivery report (NDR) action - reattempt, RTO, or update address.
+    inputs:
+      - api-key
+      - waybill
+      - action
+      - reason
+    outputs:
+      - status
+  - id: clickpost.return.create
+    name: Create return order
+    description: Create a return shipment from the customer back to the seller.
+    inputs:
+      - api-key
+      - original-waybill
+      - return-details
+    outputs:
+      - return-waybill
+  - id: clickpost.edd.predict
+    name: Predict expected delivery date
+    description: Get a predicted expected delivery date (EDD) for a shipment route.
+    inputs:
+      - api-key
+      - origin
+      - destination
+      - carrier
+    outputs:
+      - edd
+  - id: clickpost.pod.fetch
+    name: Fetch proof of delivery
+    description: Retrieve proof-of-delivery artifacts (signature, photo, OTP) for a delivered shipment.
+    inputs:
+      - api-key
+      - waybill
+    outputs:
+      - pod

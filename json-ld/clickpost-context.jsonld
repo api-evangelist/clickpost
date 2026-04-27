@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "cp": "https://clickpost.ai/ns/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Order": {
+      "@id": "schema:Order",
+      "@context": {
+        "id": "schema:orderNumber",
+        "waybill": "cp:waybill",
+        "awbNumber": "cp:awbNumber",
+        "carrier": "cp:carrier",
+        "status": "schema:orderStatus",
+        "createdAt": {
+          "@id": "schema:orderDate",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Shipment": {
+      "@id": "schema:ParcelDelivery",
+      "@context": {
+        "waybill": "cp:waybill",
+        "carrier": "cp:carrier",
+        "origin": "schema:originAddress",
+        "destination": "schema:deliveryAddress",
+        "weight": "cp:weightKg",
+        "trackingUrl": "schema:trackingUrl",
+        "expectedDelivery": {
+          "@id": "schema:expectedArrivalUntil",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "TrackingEvent": {
+      "@id": "cp:TrackingEvent",
+      "@context": {
+        "waybill": "cp:waybill",
+        "status": "cp:status",
+        "location": "schema:location",
+        "remark": "cp:remark",
+        "timestamp": {
+          "@id": "schema:dateCreated",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Carrier": {
+      "@id": "schema:DeliveryService",
+      "@context": {
+        "id": "schema:identifier",
+        "name": "schema:name",
+        "type": "cp:carrierType"
+      }
+    },
+
+    "NdrAction": {
+      "@id": "cp:NdrAction",
+      "@context": {
+        "waybill": "cp:waybill",
+        "action": "cp:action",
+        "reason": "cp:reason",
+        "createdAt": {
+          "@id": "schema:dateCreated",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "ProofOfDelivery": {
+      "@id": "cp:ProofOfDelivery",
+      "@context": {
+        "waybill": "cp:waybill",
+        "signatureUrl": "cp:signatureUrl",
+        "photoUrl": "cp:photoUrl",
+        "deliveredAt": {
+          "@id": "schema:deliveredAt",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}
