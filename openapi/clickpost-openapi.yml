@@ -1,0 +1,252 @@
+openapi: 3.1.0
+info:
+  title: ClickPost API
+  description: >-
+    ClickPost's REST API provides programmatic access to carrier
+    recommendation, order creation, cancellation, serviceability,
+    manifesting, pickup scheduling, tracking, proof of delivery, NDR
+    action management, and returns. Authentication is token-based.
+  version: 1.0.0
+  contact:
+    name: ClickPost Support
+    url: https://www.clickpost.ai
+  license:
+    name: Proprietary
+    url: https://www.clickpost.ai/terms-and-conditions
+x-generated-from: https://docs.clickpost.ai/docs/getting-started
+x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://www.clickpost.in/api/v1
+    description: ClickPost API
+security:
+  - apiKeyAuth: []
+tags:
+  - name: Recommendation
+    description: Carrier recommendation operations.
+  - name: Order
+    description: Order creation and lookup.
+  - name: Tracking
+    description: Shipment tracking.
+  - name: Serviceability
+    description: Pincode and zone serviceability.
+  - name: Cancellation
+    description: Shipment cancellation.
+  - name: Label
+    description: Shipping labels.
+  - name: Pickup
+    description: Pickup scheduling.
+paths:
+  /recommendation:
+    post:
+      operationId: recommendCarrier
+      summary: Recommend a carrier
+      description: Fetch recommended carriers based on business rules and historical data.
+      tags:
+        - Recommendation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Recommendation result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /order:
+    post:
+      operationId: createOrder
+      summary: Create a single-parcel order
+      description: Create single-parcel shipment (SPS) orders.
+      tags:
+        - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /order/mps:
+    post:
+      operationId: createMpsOrder
+      summary: Create a multi-parcel order
+      description: Create multi-parcel shipment (MPS) orders.
+      tags:
+        - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: MPS Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /order/{order_id}:
+    get:
+      operationId: getOrder
+      summary: Get order details
+      description: Retrieve shipment details for a specific order.
+      tags:
+        - Order
+      parameters:
+        - name: order_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /tracking/register:
+    post:
+      operationId: registerTracking
+      summary: Register tracking
+      description: Register shipments for tracking purposes.
+      tags:
+        - Tracking
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Tracking registered
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /tracking/{awb}:
+    get:
+      operationId: getTracking
+      summary: Get tracking status
+      description: Fetch current tracking status using air waybill number.
+      tags:
+        - Tracking
+      parameters:
+        - name: awb
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Tracking status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /serviceability/pincode:
+    post:
+      operationId: checkServiceability
+      summary: Check pincode serviceability
+      description: Check pincode carrier serviceability and pricing.
+      tags:
+        - Serviceability
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Serviceability result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /cancellation:
+    post:
+      operationId: cancelShipment
+      summary: Cancel a shipment
+      description: Cancel manifested shipments.
+      tags:
+        - Cancellation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Cancellation result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /label/{order_id}:
+    get:
+      operationId: getLabel
+      summary: Get shipping label
+      description: Retrieve shipping label for an order.
+      tags:
+        - Label
+      parameters:
+        - name: order_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Label
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /pickup-request:
+    post:
+      operationId: requestPickup
+      summary: Request a pickup
+      description: Submit pickup requests with recommended carriers.
+      tags:
+        - Pickup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Pickup requested
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+components:
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: key
+      description: ClickPost API token passed as a query parameter or header.
+  schemas:
+    GenericRequest:
+      type: object
+      additionalProperties: true
+    GenericResponse:
+      type: object
+      additionalProperties: true
