@@ -8,7 +8,7 @@ access: 3rd-Party
 position: Consumer
 specificationVersion: '0.19'
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-x-type: company
+kind: company
 tags:
   - Carriers
   - Delivery
@@ -56,11 +56,11 @@ common:
     url: https://docs.clickpost.ai/
   - type: Carrier Integrations
     url: https://www.clickpost.ai/carrier-integration
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.clickpost.ai/privacy-policy
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.clickpost.ai/terms-and-conditions
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/clickpost-context.jsonld
   - type: Spectral
     url: rules/clickpost-rules.yml
