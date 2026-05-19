@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ClickPost API — Cancellation
+  description: 'ClickPost API — Cancellation. 1 operations. Lead operation: Cancel a shipment. Self-contained Naftiko capability
+    covering one Clickpost business surface.'
+  tags:
+  - Clickpost
+  - Cancellation
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CLICKPOST_API_KEY: CLICKPOST_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: clickpost-cancellation
+    baseUri: https://www.clickpost.in/api/v1
+    description: ClickPost API — Cancellation business capability. Self-contained, no shared references.
+    resources:
+    - name: cancellation
+      path: /cancellation
+      operations:
+      - name: cancelshipment
+        method: POST
+        description: Cancel a shipment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: key
+      value: '{{env.CLICKPOST_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: clickpost-cancellation-rest
+    port: 8080
+    description: REST adapter for ClickPost API — Cancellation. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/cancellation
+      name: cancellation
+      description: REST surface for cancellation.
+      operations:
+      - method: POST
+        name: cancelshipment
+        description: Cancel a shipment
+        call: clickpost-cancellation.cancelshipment
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: clickpost-cancellation-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ClickPost API — Cancellation. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: cancel-shipment
+      description: Cancel a shipment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: clickpost-cancellation.cancelshipment
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: ClickPost API — Recommendation
+  description: 'ClickPost API — Recommendation. 1 operations. Lead operation: Recommend a carrier. Self-contained Naftiko
+    capability covering one Clickpost business surface.'
+  tags:
+  - Clickpost
+  - Recommendation
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CLICKPOST_API_KEY: CLICKPOST_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: clickpost-recommendation
+    baseUri: https://www.clickpost.in/api/v1
+    description: ClickPost API — Recommendation business capability. Self-contained, no shared references.
+    resources:
+    - name: recommendation
+      path: /recommendation
+      operations:
+      - name: recommendcarrier
+        method: POST
+        description: Recommend a carrier
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: key
+      value: '{{env.CLICKPOST_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: clickpost-recommendation-rest
+    port: 8080
+    description: REST adapter for ClickPost API — Recommendation. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/recommendation
+      name: recommendation
+      description: REST surface for recommendation.
+      operations:
+      - method: POST
+        name: recommendcarrier
+        description: Recommend a carrier
+        call: clickpost-recommendation.recommendcarrier
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: clickpost-recommendation-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for ClickPost API — Recommendation. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: recommend-carrier
+      description: Recommend a carrier
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: clickpost-recommendation.recommendcarrier
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
