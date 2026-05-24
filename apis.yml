@@ -76,6 +76,8 @@ common:
     url: rules/clickpost-rules.yml
   - type: Naftiko Capabilities
     url: capabilities/clickpost-capabilities.yml
+  - type: LLMsTxt
+    url: https://docs.clickpost.ai/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kinlane@gmail.com
