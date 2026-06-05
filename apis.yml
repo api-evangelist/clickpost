@@ -18,43 +18,32 @@ tags:
   - Shipping
   - Supply Chain
   - Tracking
-description: ClickPost is a logistics and supply chain platform that aggregates 500+ carrier integrations, multi-channel customer
-  notifications, and 50+ storefront/OMS/WMS connectors behind a unified REST API. The platform covers carrier recommendation,
-  order creation (single and multi-piece), serviceability, manifesting, pickups, real-time tracking with webhooks, proof of
-  delivery, NDR (non-delivery report) management, returns, and expected delivery date forecasting for both Indian domestic
-  and international shipments.
+description: >-
+  ClickPost is a logistics and supply chain platform that aggregates 500+ carrier integrations, multi-channel customer
+  notifications, and 50+ storefront/OMS/WMS connectors behind a unified REST API. The platform covers carrier
+  recommendation, order creation (single and multi-piece), serviceability, manifesting, pickups, real-time tracking with
+  webhooks, proof of delivery, NDR (non-delivery report) management, returns, and expected delivery date forecasting for
+  both Indian domestic and international shipments.
 apis:
   - aid: clickpost:clickpost-api
     name: ClickPost API
     tags:
-    - Logistics
-    - Shipping
-    - Tracking
+      - Logistics
+      - Shipping
+      - Tracking
     humanURL: https://docs.clickpost.ai/docs/getting-started
     properties:
-    - url: https://docs.clickpost.ai/docs/getting-started
-      type: Documentation
-    - url: https://docs.clickpost.ai/
-      type: Portal
-    - url: openapi/clickpost-openapi.yml
-      type: OpenAPI
-    - type: NaftikoCapability
-      url: capabilities/clickpost-cancellation.yaml
-    - type: NaftikoCapability
-      url: capabilities/clickpost-label.yaml
-    - type: NaftikoCapability
-      url: capabilities/clickpost-order.yaml
-    - type: NaftikoCapability
-      url: capabilities/clickpost-pickup.yaml
-    - type: NaftikoCapability
-      url: capabilities/clickpost-recommendation.yaml
-    - type: NaftikoCapability
-      url: capabilities/clickpost-serviceability.yaml
-    - type: NaftikoCapability
-      url: capabilities/clickpost-tracking.yaml
-    description: ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation,
-      serviceability, manifesting, pickup scheduling, tracking (polling and webhooks), proof of delivery, NDR action management,
-      returns, expected delivery date prediction, PUDO services, and rider/quick-commerce operations. Authentication is token-based.
+      - url: https://docs.clickpost.ai/docs/getting-started
+        type: Documentation
+      - url: https://docs.clickpost.ai/
+        type: Portal
+      - url: openapi/clickpost-openapi.yml
+        type: OpenAPI
+    description: >-
+      ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation,
+      serviceability, manifesting, pickup scheduling, tracking (polling and webhooks), proof of delivery, NDR action
+      management, returns, expected delivery date prediction, PUDO services, and rider/quick-commerce operations.
+      Authentication is token-based.
 common:
   - type: GitHubOrganization
     url: https://github.com/Clickpost
@@ -74,8 +63,6 @@ common:
     url: json-ld/clickpost-context.jsonld
   - type: Spectral
     url: rules/clickpost-rules.yml
-  - type: Naftiko Capabilities
-    url: capabilities/clickpost-capabilities.yml
   - type: LLMsTxt
     url: https://docs.clickpost.ai/llms.txt
 maintainers:
