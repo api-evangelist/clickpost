@@ -1,0 +1,1072 @@
+{
+  "item": [
+    {
+      "id": "4afc9acb-53fe-48fe-a8a8-bba6f5049c06",
+      "name": "Recommendation",
+      "description": {
+        "content": "Carrier recommendation operations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ddcfaaf-ef10-404b-ba07-c4d683766a20",
+          "name": "Recommend a carrier",
+          "request": {
+            "name": "Recommend a carrier",
+            "description": {
+              "content": "Fetch recommended carriers based on business rules and historical data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "recommendation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4999.992010442164\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e19cd5ef-65ab-4d03-b4e6-15f55ad920a0",
+              "name": "Recommendation result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "recommendation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "431e164c-3d19-47c7-937e-aab0c79f6b2c",
+      "name": "Order",
+      "description": {
+        "content": "Order creation and lookup.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "95b7ad31-efd8-49fe-8f84-5dc6f4465b8a",
+          "name": "Create a single-parcel order",
+          "request": {
+            "name": "Create a single-parcel order",
+            "description": {
+              "content": "Create single-parcel shipment (SPS) orders.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4999.992010442164\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f112b711-2644-4672-b370-c7b550fb15c5",
+              "name": "Order created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d295ae5-5502-4f71-b121-24cb87e0f9ef",
+          "name": "Create a multi-parcel order",
+          "request": {
+            "name": "Create a multi-parcel order",
+            "description": {
+              "content": "Create multi-parcel shipment (MPS) orders.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "order",
+                "mps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4999.992010442164\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b00076b3-9173-4380-bb30-eb69634b1dd4",
+              "name": "MPS Order created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    "mps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1744d49e-e20d-4f96-ae1a-c4a80ac07b8d",
+          "name": "Get order details",
+          "request": {
+            "name": "Get order details",
+            "description": {
+              "content": "Retrieve shipment details for a specific order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "order",
+                ":order_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2ac7ef12-0f86-4c1d-a776-1d3541a1398e",
+              "name": "Order details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    ":order_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "50647d04-b9d7-478f-b808-73c1637db4a2",
+      "name": "Tracking",
+      "description": {
+        "content": "Shipment tracking.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4f87d715-7aa0-4217-888a-04d1aaa9a3ba",
+          "name": "Register tracking",
+          "request": {
+            "name": "Register tracking",
+            "description": {
+              "content": "Register shipments for tracking purposes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tracking",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4999.992010442164\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b108ed62-6632-41ac-9ab3-528414e49525",
+              "name": "Tracking registered",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tracking",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2d14f55-50b7-4363-9c72-44399f9391da",
+          "name": "Get tracking status",
+          "request": {
+            "name": "Get tracking status",
+            "description": {
+              "content": "Fetch current tracking status using air waybill number.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tracking",
+                ":awb"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "awb",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "211f0df5-124d-4488-bc61-aa4d0341378a",
+              "name": "Tracking status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tracking",
+                    ":awb"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "awb",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7c1227e2-8e0e-448b-a4e4-5854fafb6109",
+      "name": "Serviceability",
+      "description": {
+        "content": "Pincode and zone serviceability.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "58f3bbf2-5871-42d0-8e1d-185d135f1757",
+          "name": "Check pincode serviceability",
+          "request": {
+            "name": "Check pincode serviceability",
+            "description": {
+              "content": "Check pincode carrier serviceability and pricing.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "serviceability",
+                "pincode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4999.992010442164\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d2bd1f79-fa52-445a-b2e6-8bc1ba360afd",
+              "name": "Serviceability result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "serviceability",
+                    "pincode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cf15cbbf-7338-48fc-b00b-29b84b8bd889",
+      "name": "Cancellation",
+      "description": {
+        "content": "Shipment cancellation.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c9dfd032-9224-48f2-89f3-d195ffb5f8b8",
+          "name": "Cancel a shipment",
+          "request": {
+            "name": "Cancel a shipment",
+            "description": {
+              "content": "Cancel manifested shipments.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "cancellation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4999.992010442164\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c208ea28-7a57-48d0-b862-507502080355",
+              "name": "Cancellation result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "cancellation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a0c851b6-d1f4-487d-a528-b1d0370be362",
+      "name": "Label",
+      "description": {
+        "content": "Shipping labels.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fe75c886-c3ed-46cc-a2c6-e0bd5b5d98d4",
+          "name": "Get shipping label",
+          "request": {
+            "name": "Get shipping label",
+            "description": {
+              "content": "Retrieve shipping label for an order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "label",
+                ":order_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "35a27b75-7784-4487-bcdc-9f581790fe73",
+              "name": "Label",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "label",
+                    ":order_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "fd8baff2-d590-4425-be4e-51f3dc1bcbbe",
+      "name": "Pickup",
+      "description": {
+        "content": "Pickup scheduling.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "350d3a79-0ebe-4be8-bed6-7df9ec699c64",
+          "name": "Request a pickup",
+          "request": {
+            "name": "Request a pickup",
+            "description": {
+              "content": "Submit pickup requests with recommended carriers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pickup-request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4999.992010442164\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd1ed1b5-2b0e-4d59-8b02-15c119aedf04",
+              "name": "Pickup requested",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pickup-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 6133.132177895593,\n  \"key_1\": 5883.419670278407,\n  \"key_2\": 4286\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.clickpost.in/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "aa535e8b-da1d-45f2-8efe-0a3c505b332c",
+    "name": "ClickPost API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation, serviceability, manifesting, pickup scheduling, tracking, proof of delivery, NDR action management, and returns. Authentication is token-based.\n\nContact Support:\n Name: ClickPost Support",
+      "type": "text/plain"
+    }
+  }
+}

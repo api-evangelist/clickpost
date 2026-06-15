@@ -1,0 +1,233 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickPost API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Recommendation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Recommend a carrier",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/recommendation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetch recommended carriers based on business rules and historical data."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Order",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a single-parcel order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/order",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create single-parcel shipment (SPS) orders."
+        },
+        {
+          "info": {
+            "name": "Create a multi-parcel order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/order/mps",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create multi-parcel shipment (MPS) orders."
+        },
+        {
+          "info": {
+            "name": "Get order details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.clickpost.in/api/v1/order/:order_id",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve shipment details for a specific order."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tracking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Register tracking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/tracking/register",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register shipments for tracking purposes."
+        },
+        {
+          "info": {
+            "name": "Get tracking status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.clickpost.in/api/v1/tracking/:awb",
+            "params": [
+              {
+                "name": "awb",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch current tracking status using air waybill number."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Serviceability",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check pincode serviceability",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/serviceability/pincode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check pincode carrier serviceability and pricing."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cancellation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cancel a shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/cancellation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Cancel manifested shipments."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Label",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get shipping label",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.clickpost.in/api/v1/label/:order_id",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve shipping label for an order."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Pickup",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request a pickup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/pickup-request",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit pickup requests with recommended carriers."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
