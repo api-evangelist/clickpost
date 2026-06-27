@@ -63,7 +63,7 @@ common:
     url: json-ld/clickpost-context.jsonld
   - type: Spectral
     url: rules/clickpost-rules.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.clickpost.ai/llms.txt
 maintainers:
   - FN: Kin Lane
