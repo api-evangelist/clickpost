@@ -45,6 +45,12 @@ apis:
       management, returns, expected delivery date prediction, PUDO services, and rider/quick-commerce operations.
       Authentication is token-based.
 common:
+  - type: VulnerabilityDisclosure
+    url: security/clickpost-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/clickpost-domain-security.yml
+  - type: Authentication
+    url: authentication/clickpost-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/Clickpost
   - type: LinkedIn
@@ -65,6 +71,8 @@ common:
     url: rules/clickpost-rules.yml
   - type: LlmsText
     url: https://docs.clickpost.ai/llms.txt
+  - url: https://www.clickpost.ai/blog
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kinlane@gmail.com

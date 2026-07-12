@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/clickpost-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKeyAuth
+  type: apiKey
+  in: query
+  parameter: key
+  description: ClickPost API token passed as a query parameter or header.
+  sources:
+  - openapi/clickpost-openapi.yml
