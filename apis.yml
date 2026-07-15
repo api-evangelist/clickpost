@@ -45,6 +45,8 @@ apis:
       management, returns, expected delivery date prediction, PUDO services, and rider/quick-commerce operations.
       Authentication is token-based.
 common:
+  - type: AgenticAccess
+    url: agentic-access/clickpost-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/clickpost-vulnerability-disclosure.yml
   - type: DomainSecurity
