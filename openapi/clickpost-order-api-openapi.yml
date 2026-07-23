@@ -1,0 +1,96 @@
+openapi: 3.1.0
+info:
+  title: ClickPost Cancellation Order API
+  description: ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation, serviceability, manifesting, pickup scheduling, tracking, proof of delivery, NDR action management, and returns. Authentication is token-based.
+  version: 1.0.0
+  contact:
+    name: ClickPost Support
+    url: https://www.clickpost.ai
+  license:
+    name: Proprietary
+    url: https://www.clickpost.ai/terms-and-conditions
+servers:
+- url: https://www.clickpost.in/api/v1
+  description: ClickPost API
+security:
+- apiKeyAuth: []
+tags:
+- name: Order
+  description: Order creation and lookup.
+paths:
+  /order:
+    post:
+      operationId: createOrder
+      summary: Create a single-parcel order
+      description: Create single-parcel shipment (SPS) orders.
+      tags:
+      - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /order/mps:
+    post:
+      operationId: createMpsOrder
+      summary: Create a multi-parcel order
+      description: Create multi-parcel shipment (MPS) orders.
+      tags:
+      - Order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericRequest'
+      responses:
+        '200':
+          description: MPS Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+  /order/{order_id}:
+    get:
+      operationId: getOrder
+      summary: Get order details
+      description: Retrieve shipment details for a specific order.
+      tags:
+      - Order
+      parameters:
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+components:
+  schemas:
+    GenericRequest:
+      type: object
+      additionalProperties: true
+    GenericResponse:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: key
+      description: ClickPost API token passed as a query parameter or header.
+x-generated-from: https://docs.clickpost.ai/docs/getting-started
+x-generated-by: claude-crawl-2026-05-08

@@ -1,0 +1,53 @@
+openapi: 3.1.0
+info:
+  title: ClickPost Cancellation Label API
+  description: ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation, serviceability, manifesting, pickup scheduling, tracking, proof of delivery, NDR action management, and returns. Authentication is token-based.
+  version: 1.0.0
+  contact:
+    name: ClickPost Support
+    url: https://www.clickpost.ai
+  license:
+    name: Proprietary
+    url: https://www.clickpost.ai/terms-and-conditions
+servers:
+- url: https://www.clickpost.in/api/v1
+  description: ClickPost API
+security:
+- apiKeyAuth: []
+tags:
+- name: Label
+  description: Shipping labels.
+paths:
+  /label/{order_id}:
+    get:
+      operationId: getLabel
+      summary: Get shipping label
+      description: Retrieve shipping label for an order.
+      tags:
+      - Label
+      parameters:
+      - name: order_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Label
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+components:
+  schemas:
+    GenericResponse:
+      type: object
+      additionalProperties: true
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: query
+      name: key
+      description: ClickPost API token passed as a query parameter or header.
+x-generated-from: https://docs.clickpost.ai/docs/getting-started
+x-generated-by: claude-crawl-2026-05-08
