@@ -1,13 +1,26 @@
 aid: clickpost
 name: ClickPost
 url: https://raw.githubusercontent.com/api-evangelist/clickpost/refs/heads/main/apis.yml
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 created: '2025-03-01'
 modified: '2026-05-19'
 type: Index
 access: 3rd-Party
 position: Consumer
 specificationVersion: '0.19'
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/clickpost.png
 kind: company
 tags:
   - Carriers
@@ -25,25 +38,97 @@ description: >-
   webhooks, proof of delivery, NDR (non-delivery report) management, returns, and expected delivery date forecasting for
   both Indian domestic and international shipments.
 apis:
-  - aid: clickpost:clickpost-api
-    name: ClickPost API
-    tags:
-      - Logistics
-      - Shipping
-      - Tracking
-    humanURL: https://docs.clickpost.ai/docs/getting-started
-    properties:
-      - url: https://docs.clickpost.ai/docs/getting-started
-        type: Documentation
-      - url: https://docs.clickpost.ai/
-        type: Portal
-      - url: openapi/clickpost-openapi.yml
-        type: OpenAPI
-    description: >-
-      ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation,
-      serviceability, manifesting, pickup scheduling, tracking (polling and webhooks), proof of delivery, NDR action
-      management, returns, expected delivery date prediction, PUDO services, and rider/quick-commerce operations.
-      Authentication is token-based.
+- aid: clickpost:clickpost-cancellation-api
+  name: ClickPost Cancellation API
+  description: Shipment cancellation.
+  humanURL: https://docs.clickpost.ai/docs/getting-started
+  tags:
+  - Cancellation
+  properties:
+  - type: OpenAPI
+    url: openapi/clickpost-cancellation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.clickpost.ai/docs/getting-started
+  - type: Portal
+    url: https://docs.clickpost.ai/
+- aid: clickpost:clickpost-label-api
+  name: ClickPost Label API
+  description: Shipping labels.
+  humanURL: https://docs.clickpost.ai/docs/getting-started
+  tags:
+  - Label
+  properties:
+  - type: OpenAPI
+    url: openapi/clickpost-label-api-openapi.yml
+  - type: Documentation
+    url: https://docs.clickpost.ai/docs/getting-started
+  - type: Portal
+    url: https://docs.clickpost.ai/
+- aid: clickpost:clickpost-order-api
+  name: ClickPost Order API
+  description: Order creation and lookup.
+  humanURL: https://docs.clickpost.ai/docs/getting-started
+  tags:
+  - Order
+  properties:
+  - type: OpenAPI
+    url: openapi/clickpost-order-api-openapi.yml
+  - type: Documentation
+    url: https://docs.clickpost.ai/docs/getting-started
+  - type: Portal
+    url: https://docs.clickpost.ai/
+- aid: clickpost:clickpost-pickup-api
+  name: ClickPost Pickup API
+  description: Pickup scheduling.
+  humanURL: https://docs.clickpost.ai/docs/getting-started
+  tags:
+  - Pickup
+  properties:
+  - type: OpenAPI
+    url: openapi/clickpost-pickup-api-openapi.yml
+  - type: Documentation
+    url: https://docs.clickpost.ai/docs/getting-started
+  - type: Portal
+    url: https://docs.clickpost.ai/
+- aid: clickpost:clickpost-recommendation-api
+  name: ClickPost Recommendation API
+  description: Carrier recommendation operations.
+  humanURL: https://docs.clickpost.ai/docs/getting-started
+  tags:
+  - Recommendation
+  properties:
+  - type: OpenAPI
+    url: openapi/clickpost-recommendation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.clickpost.ai/docs/getting-started
+  - type: Portal
+    url: https://docs.clickpost.ai/
+- aid: clickpost:clickpost-serviceability-api
+  name: ClickPost Serviceability API
+  description: Pincode and zone serviceability.
+  humanURL: https://docs.clickpost.ai/docs/getting-started
+  tags:
+  - Serviceability
+  properties:
+  - type: OpenAPI
+    url: openapi/clickpost-serviceability-api-openapi.yml
+  - type: Documentation
+    url: https://docs.clickpost.ai/docs/getting-started
+  - type: Portal
+    url: https://docs.clickpost.ai/
+- aid: clickpost:clickpost-tracking-api
+  name: ClickPost Tracking API
+  description: Shipment tracking.
+  humanURL: https://docs.clickpost.ai/docs/getting-started
+  tags:
+  - Tracking
+  properties:
+  - type: OpenAPI
+    url: openapi/clickpost-tracking-api-openapi.yml
+  - type: Documentation
+    url: https://docs.clickpost.ai/docs/getting-started
+  - type: Portal
+    url: https://docs.clickpost.ai/
 common:
   - type: AgenticAccess
     url: agentic-access/clickpost-agentic-access.yml
