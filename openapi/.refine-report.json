@@ -1,0 +1,26 @@
+{
+  "provider": "clickpost",
+  "sources": [
+    "clickpost-cancellation-api-openapi.yml",
+    "clickpost-label-api-openapi.yml",
+    "clickpost-order-api-openapi.yml",
+    "clickpost-pickup-api-openapi.yml",
+    "clickpost-recommendation-api-openapi.yml",
+    "clickpost-serviceability-api-openapi.yml",
+    "clickpost-tracking-api-openapi.yml"
+  ],
+  "outputs": [
+    "clickpost-cancellation-api-openapi.yml",
+    "clickpost-label-api-openapi.yml",
+    "clickpost-order-api-openapi.yml",
+    "clickpost-pickup-api-openapi.yml",
+    "clickpost-recommendation-api-openapi.yml",
+    "clickpost-serviceability-api-openapi.yml",
+    "clickpost-tracking-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
