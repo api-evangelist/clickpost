@@ -1,0 +1,234 @@
+# Clickpost Implementation Guide Documentation
+
+> ClickPost is simple shipping API for the Aramex API, FedEx API, Delhivery API, Ecom Express API, and more. Compare rates, manifest shipments, track packages. We help companies implement Logistics Intelligence to deliver a superior customer experience. We automate all our customer's logistics processes while using data driven learnings to improve their supply chain processes.
+
+## Guides
+- [Introduction](https://docs.clickpost.ai/docs/introduction.md)
+- [TLS Advisory for AWS Users](https://docs.clickpost.ai/docs/tls-advisory-for-aws-users.md): DNS resolution & TLS certificate guidance for api.clickpost.in / www.clickpost.in
+- [Getting Started with Clickpost](https://docs.clickpost.ai/docs/getting-started.md): Welcome to the API documentation for Clickpost.  Here you will find all the resources you need to interact with our API. You can copy cURL requests and test out the API directly from this documentation to get a feel for how it works. In addition to trying out the API, you can also read our API contracts and specifications to get a deeper understanding of how the API is structured and how it can be used. Our API is designed to be easy to use and flexible, and we hope that this documentation will help you get started quickly and easily
+- [Clickpost Integration Guidelines](https://docs.clickpost.ai/docs/clickpost-integration-guidelines.md): Clickpost Integration Guidelines for seamless API integration
+- [Token Based Authentication API](https://docs.clickpost.ai/docs/token-based-authentication-api.md): API to generate an access token
+- [Recommendation](https://docs.clickpost.ai/docs/recommendation-apis.md): ClickPost provides an AI-powered recommendation engine to select the best carriers for every order based on your business priorities and several key metrics like order destination, pin code reach, shipment weight, carrier performance, RTO rates, and much more.
+- [Fetch Recommended Carriers: India](https://docs.clickpost.ai/docs/recommendation-api-v1-1.md): Our recommendation API helps you decide amongst your available Carrier Partners, the best, most efficient, and dependable choice of delivery for any given package.  It makes these decisions based on historical data on shipping costs, RTO percentages, deliveries, delays, and other internal parameters in the user-specified location.
+- [Fetch Recommended Carriers: India [B2B]](https://docs.clickpost.ai/docs/fetch-recommended-carriers-india-copy.md): Our recommendation API helps you decide amongst your available Carrier Partners, the best, most efficient, and dependable choice of delivery for any given package.  It makes these decisions based on historical data on shipping costs, RTO percentages, deliveries, delays, and other internal parameters in the user-specified location.
+- [Fetch Recommended Carriers: Rest of the World and Cross Border](https://docs.clickpost.ai/docs/recommendation-api-v2-1.md): Our recommendation API helps you decide amongst your available Carrier Partners, the best, most efficient and dependable choice of delivery for any given shipment.  It makes these decisions based on historical data on shipping costs, RTO percentages, deliveries, delays, and other internal parameters in the user-specified location.
+- [Order Creation: India](https://docs.clickpost.ai/docs/order-creation.md): Place an order, given all the shipment details, drop information, pickup information and carrier partner ID.  Works for shipments created and transported within India only.
+- [Create SPS Order: India](https://docs.clickpost.ai/docs/order-creation-v3-1.md): This API takes the shipment details, drop information, pickup information and creates an order with specified carrier partner. Applies for Single-Piece shipments within India only.
+- [Reverse Order Creation with QC](https://docs.clickpost.ai/docs/reverse.md)
+- [Create MPS Order: India](https://docs.clickpost.ai/docs/order-creation-mps-v3-for-india-only.md): This API is intended for creating Multi-piece shipment orders within India. This API is applicable for both B2B and B2C shipments.
+- [Fetch Order Details: India](https://docs.clickpost.ai/docs/get-order-details-for-v3-api.md): Given an AWB and a carrier partner ID, fetch details of a shipment placed with that AWB. Works only for shipments created and transported within India.
+- [New B2B MPS Order Creation API](https://docs.clickpost.ai/docs/new-b2b-mps-order-creation-api.md): This API is intended for creating B2B Multi Piece shipments within India.
+- [B2B Sales order Dispatch API](https://docs.clickpost.ai/docs/b2b-sales-order-dispatch-api.md): This API is intended for creating a Sales Order in ClickPost dispatch manager and optionally create a shipment post that.
+- [Order Creation: Rest of the World and Cross-Border](https://docs.clickpost.ai/docs/order-creation-for-international-use.md): Place an order, given all the shipment details, drop information, pickup information and carrier partner ID.  Works for shipments created and transported within North America, Europe, Middle East and South-East Asia and all cross-border shipments.
+- [Create SPS Order: Rest of the World and Cross-Border](https://docs.clickpost.ai/docs/order-creation-v4.md): This API takes the shipment details, drop information, pickup information and creates an order with specified carrier partner. This applies for shipments created and transported within North America, Europe, Middle East and South-East Asia and all cross-border Single-Piece shipments.
+- [Create MPS Order: Rest of the World and Cross-Border](https://docs.clickpost.ai/docs/order-creation-mps-v4-for-international-use.md): This API takes the shipment details, drop information, pickup information and creates an order with specified carrier partner. This applies for shipments created and transported within North America, Europe, Middle East and South-East Asia and cross-border Multi-Piece shipments.
+- [Fetch Order Details: Rest of the World and Cross-Border](https://docs.clickpost.ai/docs/get-order-details-for-v4-api.md): Given an AWB and a carrier partner ID, fetch details of a shipment placed with that AWB. Works for shipments created and transported within North America, Europe, Middle East and South-East Asia and all cross-border shipments.
+- [Custom Order Creation Fields for Certain Carrier Partners](https://docs.clickpost.ai/docs/custom-order-creation-fields-for-certain-courier-partners-v3.md)
+- [Fetch AWB Number for manifested order](https://docs.clickpost.ai/docs/fetch-awb-number-reference-number-for-already-manifested-order.md): In case you want to fetch the AWB for a shipment that you generated in past via Clickpost, you can do so using this API.  You can either pass reference_number or awb + cp_id
+- [Fetch shipping label](https://docs.clickpost.ai/docs/fetch-shipping-label.md)
+- [Order Tracking Registration](https://docs.clickpost.ai/docs/order-tracking.md): Using this API enterprises can register an AWB for tracking updates with Clickpost. It takes the AWB number, carrier partner ID, shipment information, pick-up and drop information and additional details as input and returns the tracking ID in response
+- [Register shipment for tracking: V2](https://docs.clickpost.ai/docs/register-a-shipment-for-tracking-in.md): Using this API enterprises can register an AWB for tracking updates with Clickpost. It takes the AWB number, carrier partner ID, shipment information, pick-up and drop information and additional details as input and returns the Clickpost tracking ID in response.
+- [Register shipment for tracking: V3](https://docs.clickpost.ai/docs/awb-registration.md): Using this API enterprises can register an AWB for tracking updates with Clickpost. It takes the AWB number, carrier partner ID, shipment information, pick-up and drop information and additional details as input and returns the Clickpost tracking ID in response.
+- [New B2B MPS AWB Registration API](https://docs.clickpost.ai/docs/new-b2b-mps-awb-registration.md): This API is intended for registering B2B carrier's AWBs in ClickPost system.
+- [Fetch Tracking Details](https://docs.clickpost.ai/docs/shipment-tracking.md): With help of Clickpost's tracking APIs, it would be very convenient to get the latest tracking updates. With a tracking API, enterprises can add shipment tracking functionality to their website or app, allowing your customers to track their shipments at every step.
+- [Tracking Shipment using Polling](https://docs.clickpost.ai/docs/tracking-shipment-using-polling.md): This API uses polling to track order statuses, given details for the order and the carrier partner involved.
+- [Fetch updated shipment list](https://docs.clickpost.ai/docs/fetch-updated-orders-list-1.md): The API retrieves the latest shipment tracking status updates between the specified start and end time. This API takes the start date and end date and returns the data for all the AWBs which were updated during this time period
+- [Tracking Shipment using Webhook](https://docs.clickpost.ai/docs/tracking-a-shipment-using-webhook.md): The enterprise can configure a webhook URL on Clickpost's dashboard, where Clickpost will send the updated tracking statuses
+- [All Status Webhook](https://docs.clickpost.ai/docs/all-status-webhook.md)
+- [Fetch Additional Tracking details via Webhooks](https://docs.clickpost.ai/docs/fetch-additional-tracking-details-via-webhooks.md): This document illustrates the detailed steps on how additional tracking details can be captured by configuring a separate webhook endpoint
+- [Best practice around consuming status updates via Webhooks](https://docs.clickpost.ai/docs/best-practice-around-consuming-status-updates-via-all-status-webhooks.md): Follow these best practices for consuming the Shipment Updates via Webhooks
+- [NDR Bucket Codes](https://docs.clickpost.ai/docs/ndr-status-codes.md)
+- [Serviceability](https://docs.clickpost.ai/docs/serviceability.md): Enterprise can use Clickpost's Serviceability APIs to check whether the particular drop pincode and pickup pincode are serviceable by the active carrier partners or not
+- [Pincode Carrier Serviceability](https://docs.clickpost.ai/docs/pincode-carrier-serviceability-1.md): The API takes the pickup and drop Pincode and returns an array of all the serviceable courier partners and their corresponding shipping charges and committed SLAs
+- [Drop Pincode Serviceability](https://docs.clickpost.ai/docs/serviceability-v3-1.md): By entering the drop_pincode, the enterprises can determine whether the Pincode is serviceable by any of their active carriers or not.
+- [Bulk Serviceability](https://docs.clickpost.ai/docs/bulk-serviceability-v1-1.md): By entering the carrier partner ID and account code, the enterprise can get all the serviceable drop and pickup pincodes
+- [Fetch Drop pincodes](https://docs.clickpost.ai/docs/fetch-all-drop-pincodes.md): By entering the username and key, the enterprise can get all the serviceable drop pincodes, the enterprise can get all the serviceable drop pin codes for all of the carrier partners combined
+- [Pincode Serviceability Check](https://docs.clickpost.ai/docs/pincode-serviceability-check-1.md): The API takes the pincode and returns an array of all the serviceable carrier partners
+- [Non Delivery Report (NDR)](https://docs.clickpost.ai/docs/non-delivery-report-ndr-1.md): NDR or Non-Delivery Report is a notification shared by carrier companies specifying the orders which could not be delivered in a certain timeframe. When a delivery agent is unable to successfully deliver the order, which might happen for a variety of reasons like “incorrect address” or “customer unavailability”, the order is marked as an NDR.
+- [NDR Shipment Reports](https://docs.clickpost.ai/docs/reporting-schema-ndr-shipment.md): The NDR Shipment-Level Reporting Schema enables users to create configurable reports for shipments that are part of the NDR shipments. It provides shipment-level visibility through a wide range of available fields, filters, and scheduling options.
+- [NDR Communication report](https://docs.clickpost.ai/docs/reporting-schema-ndr-communication.md): The NDR Communication Reporting Schema provides an event-level view of the complete NDR shipment. It captures detailed information for every NDR notification, customer response, courier instruction, feedback entry, call log, recording, and related communication event.
+- [Fetch Expected Date of Delivery (IN)](https://docs.clickpost.ai/docs/expected-date-of-delivery-api.md): By entering the pick up and drop pin codes, the enterprises can fetch the expected date of delivery and expose the same on their website inorder to improve the customer experience.
+- [Fetch Expected Date of Delivery [Global]](https://docs.clickpost.ai/docs/international-edd.md): By entering pickup details and drop details, International customer can get the EDD
+- [WMS Integration - Predicted SLA API ](https://docs.clickpost.ai/docs/wms-integration-predicted-sla-api.md)
+- [WMS Unified Serviceability API](https://docs.clickpost.ai/docs/wms-unified-serviceability-api.md)
+- [Cancellation API](https://docs.clickpost.ai/docs/cancellation.md): Cancellation API allows you to cancel the shipment in the carrier partner's system
+- [Manifest Generation API (For India)](https://docs.clickpost.ai/docs/manifest-generation-api-for-india.md)
+- [Fetch Proof of Delivery](https://docs.clickpost.ai/docs/proof-of-delivery-api.md): The API takes the waybill/AWB as input and returns the proof of delivery in PDF format as an URL
+- [Manual POD Upload](https://docs.clickpost.ai/docs/manual-pod-upload.md)
+- [PUDO](https://docs.clickpost.ai/docs/pudo.md): Given the customer's location and courier partner (optional), fetch all the PUDO (pick-up and drop-off) locations.
+- [Customer Feedback API](https://docs.clickpost.ai/docs/customer-feedback-api.md): This API enables customers to retrieve feedback from end-users in case of failure of delivery of any shipment. Users can update their preferred location of delivery at Clickpost Tracking Page, and those changes are retrieved by this API.
+- [Pickup Request](https://docs.clickpost.ai/docs/pickup-request.md)
+- [Pickup Request: India](https://docs.clickpost.ai/docs/pickup-request-api.md): Given all pickup and carrier partner details, create a new pickup request for select carriers. Applicable for shipments created and transported within India only.
+- [Pickup Request: Rest of the World](https://docs.clickpost.ai/docs/pickup-request-v2-api.md): Given all pickup and carriers partner details, create a new pickup request for select carriers. Works for shipments created and transported within North America, Europe, Middle East and South-East Asia and all cross-border shipments.
+- [Utilities](https://docs.clickpost.ai/docs/utilities.md): Utility APIs for Managing your Clickpost Account
+- [Fetch Accounts from Clickpost](https://docs.clickpost.ai/docs/fetch-accounts-from-clickpost.md): With help of this API enterprises can get all the carrier partner accounts that are currently active on their Clickpost dashboard. This API would be useful if the enterprise is not using Clickpost's allocation rules and just require the active list of accounts to assign the carrier manually
+- [Fetch Audit Logs](https://docs.clickpost.ai/docs/fetch-audit-logs-1.md): Fetch Audit Logs API helps you to fetch the activity logs on actions performed by various users for your account on Clickpost
+- [Fetch Daily Shipments Created Count](https://docs.clickpost.ai/docs/fetch-daily-shipments-created-count.md): With help of this API enterprises can get the count of shipments created/registered on the Clickpost platform date-wise to track the performance on a daily bases.
+- [Fetch shipment security key](https://docs.clickpost.ai/docs/fetch-shipment-security-key-1.md): Fetch shipment security key API gives the unique security key for each shipment that the enterprise can consume and store corresponding to a shipment in the system and can pass this key in the tracking page parameters to ensure higher security
+- [Gateway: MessageBird for SMS](https://docs.clickpost.ai/docs/gateway-messagebird-for-sms.md): Now Clickpost customers can send shipping updates via SMS using the MessageBird integration
+- [Gateway: Netcore for Whatsapp](https://docs.clickpost.ai/docs/gateway-netcore-whatsapp.md): Now Clickpost customers can send shipping updates via SMS using the MessageBird integration
+- [Gateway: Klaviyo for sending shipping notifications](https://docs.clickpost.ai/docs/gateway-klaviyo.md): Now Clickpost customers can send shipping updates via Klaviyo integration
+- [Gateway: Freshmarketer for Marketing Automation](https://docs.clickpost.ai/docs/gateway-freshmarketer-for-marketing-automation.md): Now Clickpost customers can enhance the post purchase customer experience via Marketing tool using the Freshmarketer Integration.
+- [Drop Appointment Slot Notification Alerts](https://docs.clickpost.ai/docs/drop-appointment-slot-notifications.md)
+- [Edit Order](https://docs.clickpost.ai/docs/convert-cod-to-prepaid-1.md): Edit Order API allows the enterprise to edit specific details for a shipment that has already been manifested.
+- [Reporting APIs](https://docs.clickpost.ai/docs/reporting-1.md): Using these APIs, Enterprise can fetch all the shipment updates received for a day in Clickpost
+- [Report Request](https://docs.clickpost.ai/docs/report-request-2.md): Using this API, Enterprise can create a request to fetch all the shipment updates received for a day in Clickpost.
+- [Report Request Tracking: Get request status](https://docs.clickpost.ai/docs/report-request-tracking-get-statusdata-of-a-request.md): Using this API, you can get the status of the "Report request" that was triggered in the first step (Report Request API) and can get the report's URL
+- [Complete list of fields available in TRACK_ORDER_DASHBOARD_REPORT](https://docs.clickpost.ai/docs/complete-list-of-fields-available-in-reporting-api.md): List of fields that you can query on to get the reporting API
+- [Complete list of fields available in RETURN_TRACK_ORDER_DASHBOARD_REPORT](https://docs.clickpost.ai/docs/complete-list-of-fields-available-in-return_track_order_dashboard_report.md)
+- [Best practices on using Reporting APIs](https://docs.clickpost.ai/docs/best-practices-on-using-reporting-apis.md)
+- [Return Order Placed Webhook](https://docs.clickpost.ai/docs/return-order-placed-webhook-1.md): This Webhook is only useful for customers using Clickpost’s managed returns platform to accept customer returns on their website
+- [Returns Polling Delta API](https://docs.clickpost.ai/docs/returns-polling-delta-api-1.md): The Return Polling Delta API is used to fetch all the return requests raised in the Clickpost system in a 60 minute window. This can be considered as a fallback mechanism to the Return Request Received Webhook mentioned above that is already in place to share this data.
+- [Rider Availability (Serviceability)](https://docs.clickpost.ai/docs/rider-availability-serviceability.md): API provides with the rider availability, pricing and the estimated time for pickup and drop at a carrier level.
+- [Recommendation](https://docs.clickpost.ai/docs/recommendation-1.md): It helps select the appropriate carrier at a store level.
+- [Reallocation (Carrier Hopping)](https://docs.clickpost.ai/docs/reallocation-api.md)
+- [Order Details via Polling](https://docs.clickpost.ai/docs/order-details-via-polling.md): This API is used to fetch the current status and details of the Order Reallocation (Carrier Hopping) flow.
+- [Order Details via Webhook](https://docs.clickpost.ai/docs/order-details-via-webhook.md): This Webhook is used to receive real-time updates of the Order Reallocation (Carrier Hopping) flow.
+- [Get Rider Location](https://docs.clickpost.ai/docs/rider-location.md): Provides rider location updates (latitude and longitude) for the HLD shipments.
+- [Polygonal ETA](https://docs.clickpost.ai/docs/polygon-eta.md): It calculates pickup-to-delivery distance and returns ETA (Estimated Delivery Time) by matching calculated distance with configured courier boundary levels and ETA configurations.
+- [Polygonal Serviceability](https://docs.clickpost.ai/docs/polygon-serviceability.md): Determines whether a delivery location is serviceable by a specific pickup store(dark store/physical store) using polygon-based boundary setup. If serviceable, returns the respective courier accounts
+- [Get Serviceable Stores](https://docs.clickpost.ai/docs/get-serviceable-stores.md): For a given delivery location, returns the list of active pickup stores (dark store/physical store) that are serviceable for the given drop location.
+- [Delivery Modes](https://docs.clickpost.ai/docs/delivery-modes.md): This API returns eligible delivery modes (Hyperlocal, SDD, NDD, Standard) for given pickup and drop locations based on the system setup/configuration.
+- [Unified Serviceability](https://docs.clickpost.ai/docs/unified-serviceability.md): This API checks the serviceability for hyperlocal (optionally rider availability) and standard delivery for given pickup and drop locations based on the system setup/configuration and provides delivery ETA (for hyperlocal), EDD and SLA with shipping charges (for standard).
+- [API error codes](https://docs.clickpost.ai/docs/error-codes.md): Error codes are being sent by Clickpost in the API response. You can refer to this for building resilient systems and putting in place an error-handling mechanism
+- [Clickpost status code](https://docs.clickpost.ai/docs/tracking-status-codes.md): Clickpost Tracking codes are unified across courier partners
+- [Notification event [Useful for selected webhooks]](https://docs.clickpost.ai/docs/notification-event.md): In case you want to receive webhooks only for specific events from Clickpost, Clickpost provides functionality for the same.  If you opt for this service (Selected Event Webhooks), we add the "notification_event_id" key in the webhook payload. This will inform you of the current status of the shipment.
+- [NDR status code](https://docs.clickpost.ai/docs/ndr-status-codes-1.md): Clickpost classifies NDR reasons passed by couriers as free text remarks and classifies them in standard NDR buckets.
+- [NPR status code](https://docs.clickpost.ai/docs/npr-status-code.md): Pickup failure status codes and their description
+- [Create an Courier partner Account](https://docs.clickpost.ai/docs/create-an-courier-partner-account.md)
+- [Steps to Upload Pre-assign AWBs and Setup Alerts](https://docs.clickpost.ai/docs/courier-partner-integration.md)
+- [Stackbox](https://docs.clickpost.ai/docs/stackbox.md)
+- [GrowSimplee / Blitz](https://docs.clickpost.ai/docs/growsimplee.md)
+- [Swift / GoSwift SPS](https://docs.clickpost.ai/docs/swift.md)
+- [Proship](https://docs.clickpost.ai/docs/proship.md)
+- [Proship Reverse](https://docs.clickpost.ai/docs/proship-rvp.md)
+- [Purpledrone Reverse](https://docs.clickpost.ai/docs/purpledrone-rvp.md)
+- [Ekart Reverse](https://docs.clickpost.ai/docs/ekart-rvp.md)
+- [Salasa SPS/MPS [ME]](https://docs.clickpost.ai/docs/salasa-spsmps.md)
+- [First Flight](https://docs.clickpost.ai/docs/first-flight.md)
+- [Porter HLD](https://docs.clickpost.ai/docs/porter-hld.md)
+- [GMTC [ME]](https://docs.clickpost.ai/docs/gmtc.md)
+- [Oxyzen MPS](https://docs.clickpost.ai/docs/oxyzen-mps.md)
+- [Criticalog SPS/MPS](https://docs.clickpost.ai/docs/criticalog-mps.md)
+- [Quickpostme SPS [ME]](https://docs.clickpost.ai/docs/quickpostme-sps.md)
+- [Bizlog SPS](https://docs.clickpost.ai/docs/bizlog-sps.md)
+- [Bizlog SPS Reverse](https://docs.clickpost.ai/docs/bizlog-sps-reverse.md)
+- [AJEX Logistics [ME]](https://docs.clickpost.ai/docs/ajex-logistics-me.md)
+- [Growever MPS](https://docs.clickpost.ai/docs/growever-mps.md)
+- [Piekart SPS](https://docs.clickpost.ai/docs/piekart-sps.md)
+- [DP World (Delex) MPS](https://docs.clickpost.ai/docs/dp-world-delex-mps.md)
+- [Delhivery](https://docs.clickpost.ai/docs/delhivery.md)
+- [Delhivery SPS](https://docs.clickpost.ai/docs/delhivery-sps.md)
+- [Delhivery INT](https://docs.clickpost.ai/docs/delhivery-int.md)
+- [Delhivery B2B MPS](https://docs.clickpost.ai/docs/delhivery-b2b-mps.md)
+- [Delhivery B2B MPS Reverse](https://docs.clickpost.ai/docs/delhivery-b2b-mps-reverse.md)
+- [Delhivery B2C MPS](https://docs.clickpost.ai/docs/delhivery-b2c-mps.md)
+- [Delhivery B2C MPS Reverse](https://docs.clickpost.ai/docs/delhivery-b2c-mps-reverse.md)
+- [Delhivery Exchange / REPL Service](https://docs.clickpost.ai/docs/delhivery-exchange.md): Delhivery is a logistics company that provides a variety of services to businesses and individuals. These services include last-mile delivery, third-party and transit warehousing, reverse logistics, payment collection, vendor-to-warehouse, and vendor-to-customer shipping.
+- [VRL logisitcs](https://docs.clickpost.ai/docs/vrl-logisitcs.md)
+- [iThink Logistics](https://docs.clickpost.ai/docs/ithink-logistics.md)
+- [iThink Logistics Reverse](https://docs.clickpost.ai/docs/ithink-logistics-reverse.md)
+- [Sequel SPS](https://docs.clickpost.ai/docs/sequel-sps.md)
+- [Sequel SPS Reverse](https://docs.clickpost.ai/docs/sequel-sps-reverse.md)
+- [XpressBees](https://docs.clickpost.ai/docs/xpressbee.md)
+- [Xpressbees B2B MPS Cargo](https://docs.clickpost.ai/docs/xpressbee-b2b-mps-cargo.md)
+- [Xpressbee Prepaid Wallet](https://docs.clickpost.ai/docs/xpressbee-prepaid-wallet.md)
+- [Xpressbees B2C SPS](https://docs.clickpost.ai/docs/xpressbees-b2c-sps.md)
+- [Xpressbees B2C SPS Reverse](https://docs.clickpost.ai/docs/xpressbees-b2c-sps-reverse.md)
+- [Xpressbee Ecom MPS [B2C]](https://docs.clickpost.ai/docs/xpressbee-ecom-mps-b2c.md)
+- [Shadowfax](https://docs.clickpost.ai/docs/shadowfax.md)
+- [Shadowfax](https://docs.clickpost.ai/docs/shadowfax-sps.md)
+- [Shadowfax HIH](https://docs.clickpost.ai/docs/shadowfax-hih.md)
+- [CriticaLog SPS Reverse](https://docs.clickpost.ai/docs/critical-log-sps-reverse.md)
+- [Rocketbox B2B MPS](https://docs.clickpost.ai/docs/rocketbox-b2b-mps.md)
+- [ShipFast](https://docs.clickpost.ai/docs/shipfast.md)
+- [Shipmozo](https://docs.clickpost.ai/docs/shipmozo.md)
+- [ATS - Amazon Shipping](https://docs.clickpost.ai/docs/amazon-ats.md)
+- [USPS Forward](https://docs.clickpost.ai/docs/usps-forward.md)
+- [USPS Reverse](https://docs.clickpost.ai/docs/usps-reverse.md)
+- [Bluedart](https://docs.clickpost.ai/docs/bluedart.md)
+- [Bluedart HIH Exchange](https://docs.clickpost.ai/docs/bluedart-hih-exchange.md)
+- [IndiaPost](https://docs.clickpost.ai/docs/indiapost.md)
+- [DHL DGF](https://docs.clickpost.ai/docs/dhl-dgf.md): Configure DHL DGF INT as a courier partner in Clickpost, including required credentials, prerequisites, and troubleshooting guidance.
+- [ShipPrime](https://docs.clickpost.ai/docs/shipprime.md)
+- [ShipPrime Reverse](https://docs.clickpost.ai/docs/shipprime-reverse.md)
+- [Delhivery QC](https://docs.clickpost.ai/docs/delhivery-qc-mapping.md)
+- [Xpressbees QC](https://docs.clickpost.ai/docs/xb-qc-mapping.md)
+- [EcomExpress QC](https://docs.clickpost.ai/docs/ecomexpress-qc-mapping.md)
+- [Shadowfax QC](https://docs.clickpost.ai/docs/sfx-qc-mapping.md)
+- [Bluedart QC](https://docs.clickpost.ai/docs/bluedart-qc-mapping.md)
+- [Ekart QC](https://docs.clickpost.ai/docs/ekart-qc.md)
+- [CriticaLog QC](https://docs.clickpost.ai/docs/criticalog-qc.md)
+- [Eshopbox QC](https://docs.clickpost.ai/docs/eshopbox-qc.md)
+- [Delivery Plus QC](https://docs.clickpost.ai/docs/delivery-plus-qc.md)
+- [ShipRocket QC](https://docs.clickpost.ai/docs/shiprocket-qc.md)
+- [Courier Partner Mapping](https://docs.clickpost.ai/docs/courier-partner-mapping.md)
+- [Brand Net Promoter Score](https://docs.clickpost.ai/docs/brand-net-promoter-score.md): Clickpost has introduced a new NPS system, allowing enterprises to gauge brand NPS and comprehend the customer shopping experience
+- [Upload Zone to Zone SLA](https://docs.clickpost.ai/docs/upload-zone-zone-sla.md): If you have pickups from multiple location and want Clickpost to manage SLAs for all the pickup locations to drop location, you can upload the SLA under Zone to Zone SLA upload
+- [Upload SLA for your Warehouse](https://docs.clickpost.ai/docs/upload-warehouse-sla.md): If you have pickups from multiple location and want Clickpost to manage SLAs for all the pickup locations to drop location, you can upload the SLA in marketplace format
+- [Upload Marketplace SLA](https://docs.clickpost.ai/docs/upload-marketplace-sla.md): If you have pickups from multiple location and want Clickpost to manage SLAs for all the pickup locations to drop location, you can upload the SLA in marketplace format
+- [Blacklist Pincode](https://docs.clickpost.ai/docs/blacklist-pincode.md): Enterprise can use the Blacklist pincode feature to block orders to certain Pincodes
+- [Pincode to City and State API](https://docs.clickpost.ai/docs/pincode-to-city-and-state-api-1.md)
+- [Discount Code Customization](https://docs.clickpost.ai/docs/sample-1-1.md): **Release Date: May 2024**
+- [Exchange: Standardized Format of Exchange Forward Order IDs](https://docs.clickpost.ai/docs/exchange-standardized-format-of-exchange-forward-order-ids.md): **Released on: May 2024**
+- [Non Returnable & Non Exchangable Rules v2](https://docs.clickpost.ai/docs/non-returnable-non-exchangable-rules-v2.md)
+- [Easyecom Pre dispatch configuration ( India and International)](https://docs.clickpost.ai/docs/easyecom-pre-dispatch-configuration-india-and-international.md)
+- [Shopify Pre dispatch ( Shipment creation) configuration](https://docs.clickpost.ai/docs/shopify-pre-dispatch-shipment-creation-configuration.md)
+- [Shopify Post dispatch ( Tracking) configuration](https://docs.clickpost.ai/docs/shopify-post-dispatch-tracking-configuration.md)
+- [ERPNext Integration](https://docs.clickpost.ai/docs/erpnxt-b2b-mps-integration.md)
+
+## API Reference
+- [Recommendation](https://docs.clickpost.ai/reference/recommendation.md): AI-powered engine to select the best carrier for every order based on your business priorities  Outcome: Lower shipping costs, better Logistics metrics
+- [Fetch Recommended Carriers: India](https://docs.clickpost.ai/reference/recommendation-api-v1.md): Our recommendation API helps you decide amongst your available Carrier Partners, the best, most efficient and dependable choice of delivery for any given package.  It makes these decisions based on historical data on deliveries, delays and other internal parameters in the user-specified location.
+- [Fetch Recommended Carriers: Rest of the World and Cross Border](https://docs.clickpost.ai/reference/recommendation-api-v2.md): Our recommendation API helps you decide amongst your available Carrier Partners, the best, most efficient and dependable choice of delivery for any given package.  It makes these decisions based on historical data on deliveries, delays and other internal parameters in the user-specified location.  This API can be used for shipments in the GCC, North America, and European Countries.
+- [Order Creation: India](https://docs.clickpost.ai/reference/order-creation-for-india-only.md)
+- [Create Order: India](https://docs.clickpost.ai/reference/order-creation-for-india-only-v3.md): This API takes the shipment details, drop information, pickup information and creates an order with specified carrier partner. Works only for shipments created and transported within India.
+- [Fetch Order Details: India](https://docs.clickpost.ai/reference/get-order-details-for-v3-api-1.md): Given an AWB and a carrier partner ID, fetch details of a shipment placed with that AWB. Works only for shipments created and transported within India.
+- [Order Creation: Rest of the World and Cross-Border](https://docs.clickpost.ai/reference/order-creation-for-international-use-1.md)
+- [Create Order: Rest of the World](https://docs.clickpost.ai/reference/order-creation-rest-of-the-world.md): This API takes the shipment details, drop information, pickup information and creates an order with specified carrier partner. This applies for shipments created and transported within North America, Europe, Middle East and South-East Asia and cross-border shipments.
+- [Fetch Order Details: Rest of the World](https://docs.clickpost.ai/reference/get-order-details-for-v4-api-1.md): Given an AWB and a carrier partner ID, fetch details of a shipment placed with that AWB. Works for shipments created and transported within North America, Europe, Middle East and South-East Asia and all cross-border shipments. Especially useful when an async order is placed with the V4 API.
+- [Fetch Shipping Label](https://docs.clickpost.ai/reference/fetch-shipping-label-1.md)
+- [Order Tracking Registration](https://docs.clickpost.ai/reference/order-tracking-1.md): Using tracking APIs, enterprises can add shipment-tracking functionality to their website or app, allowing their customers to track their shipments at every step.
+- [Register shipment for tracking: V2](https://docs.clickpost.ai/reference/awb-registration-1.md): Register an AWB for tracking updates with Clickpost, given the AWB number, carrier partner ID, shipment information, pick-up and drop information, and additional details as input.
+- [Register shipment for tracking: V3 (Recommended)](https://docs.clickpost.ai/reference/register-a-shipment-for-tracking-in-1.md): Register an AWB for tracking updates with Clickpost, given the AWB number, carrier partner ID, shipment information, pick-up and drop information, and additional details as input.
+- [Fetch Tracking Details](https://docs.clickpost.ai/reference/fetch-tracking-updates.md): Since excellent customer experience is key to a successful business, shipment tracking has become an essential service. With help of our tracking APIs, it would be very convenient to get the latest tracking updates.
+- [Tracking Shipment using Polling](https://docs.clickpost.ai/reference/tracking-shipment-using-polling-1.md): Enterprise can get the latest tracking updates from Clickpost in two ways: Polling or Webhooks. This API uses polling to track an order, given it's waybill number and courier partner ID. Polling API retrieves the historic statuses and the current status of the package.
+- [Fetch updated shipment list](https://docs.clickpost.ai/reference/fetch-updated-orders-list.md): The API retrieves the latest shipment tracking status updates between the specified start and end time. This API takes the start date and end date and returns the data for all the AWBs which were updated during this time period
+- [Tracking Shipment using Webhook](https://docs.clickpost.ai/reference/tracking-shipment-using-webhook.md): The enterprise can configure URL on Clickpost's dashboard, where Clickpost will send the updated tracking status once Clickpost receives them from the courier partner.
+- [Serviceability](https://docs.clickpost.ai/reference/clickpost-serviceability.md): Enterprise can use Clickpost's Serviceability APIs to check whether the particular drop pincode and pickup pincode are serviceable by the active carriers or not
+- [Pincode Carrier Serviceability](https://docs.clickpost.ai/reference/pincode-carrier-serviceability.md): The API takes the pickup and drop Pincode and returns an array of all the serviceable carrier partners and their corresponding shipping charges and committed SLAs
+- [Drop Pincode Serviceability](https://docs.clickpost.ai/reference/pincode-serviceability.md): By entering the drop_pincode, the enterprises can determine whether the Pincode is serviceable by any of their active carriers or not.
+- [Bulk Serviceability](https://docs.clickpost.ai/reference/bulk-serviceability.md): By entering the carrier partner ID and account code, the enterprise can get all the serviceable drop and pickup pincodes
+- [Fetch Drop pincodes](https://docs.clickpost.ai/reference/get-all-drop-pincodes.md): By entering the username and key, the enterprise can get all the serviceable drop pin codes, enterprise can get all the serviceable drop pin codes for all of the carrier partners combined
+- [Pincode Serviceability Check](https://docs.clickpost.ai/reference/pincode-serviceability-check.md): The API takes the pincode and returns an array of all the serviceable carrier partners
+- [Expected Date of Delivery](https://docs.clickpost.ai/reference/expected-date-of-delivery.md): By entering the pick up and drop pin codes, the enterprises can fetch the expected date of delivery
+- [Fetch Expected Date of Delivery (IN)](https://docs.clickpost.ai/reference/expected-date-of-delivery-v2.md): By entering the pick up and drop pin codes, the enterprises can fetch the expected date of delivery and expose the same on their website inorder to improve the customer experience.
+- [Fetch Expected Date of Delivery [Global]](https://docs.clickpost.ai/reference/international-edd-1.md)
+- [Cancellation](https://docs.clickpost.ai/reference/cancellation-1.md): Cancellation API allows you to cancel the shipment in the carrier partner's system
+- [Non Delivery Report (NDR)](https://docs.clickpost.ai/reference/non-delivery-report-ndr.md): NDR or Non-Delivery Report is a notification shared by courier companies specifying the orders which could not be delivered in a certain timeframe. When a delivery agent is unable to successfully deliver the order, which might happen for a variety of reasons like “incorrect address” or “customer unavailability”, the order is marked as an NDR.
+- [Customer Feedback](https://docs.clickpost.ai/reference/customer-feedback.md): This API enables customers to retrieve feedback from end-users in case of failure of delivery of any shipment. Users can update their preferred location of delivery at Clickpost Tracking Page, and those changes are retrieved by this API.
+- [Fetch Proof of Delivery](https://docs.clickpost.ai/reference/proof-of-delivery-api-1.md): The API takes the waybill/AWB as input and returns the proof of delivery in PDF format as an URL
+- [Pickup Request: India](https://docs.clickpost.ai/reference/pickup-request-api-1.md): Given all pickup and carrier partner details, create a new pickup request for select carriers. Applicable for shipments created and transported within India only.
+- [Pickup Request: Rest of the World](https://docs.clickpost.ai/reference/pickup-request-v2-api-1.md): Given all pickup and carriers partner details, create a new pickup request for select carriers. Applicable for all worldwide and cross-border shipments.
+- [Edit Order](https://docs.clickpost.ai/reference/convert-cod-to-prepaid.md): Edit Order API allows the enterprise to edit specific details for a shipment that has already been manifested.
+- [Fetch Accounts from Clickpost](https://docs.clickpost.ai/reference/fetch-accounts-from-clickpost-1.md): With help of this API enterprises can get all the carrier partner accounts that are currently active on their Clickpost dashboard. This API would be useful if the enterprise is not using Clickpost's allocation rules and just require the active list of accounts to assign the carrier manually
+- [Fetch Audit Logs](https://docs.clickpost.ai/reference/fetch-audit-logs.md): Fetch Audit Logs API helps you to fetch the activity logs on actions performed by various users for your account on Clickpost. API gives all the activity logs performed for an hour together in the API response
+- [Fetch Daily Shipments Created Count](https://docs.clickpost.ai/reference/fetch-daily-shipments-created-count-1.md): With help of this API enterprises can get the count of shipments created/registered on the Clickpost platform date-wise to track the performance on a daily bases.
+- [Fetch shipment security key](https://docs.clickpost.ai/reference/fetch-shipment-security-key.md): Fetch shipment security key API give the security key for each shipment that you can consume and store corresponding to a shipment in the system.  This security key is useful if you have the security feature enabled on Clickpost's tracking page. If the security feature is enabled on your Clickpost tracking page, you need to ensure you consume the shipment security key and pass it in URL param key= while rendering the tracking page at your end.
+- [Whatsapp opt-out/opt-in API](https://docs.clickpost.ai/reference/whatsapp-opt-outopt-in-api.md): The WhatsApp opt-in API allows you to inform Clickpost systems if WhatsApp communication shall be enabled/disabled for a particular shipment.
+- [Report Request](https://docs.clickpost.ai/reference/report-request.md): Using this API, you can fetch all the shipment updates received for a day in Clickpost.  The start time and end time are in UTC.
+- [Report Request Tracking: Get status/data of a request](https://docs.clickpost.ai/reference/report-request-1.md): Using this API, you can fetch all the shipment updates received for a day in Clickpost.
+- [Return Request Placed](https://docs.clickpost.ai/reference/return-request-placed.md): This Webhook is only useful for customers using Clickpost’s managed returns platform to accept customer returns on their website
+- [Return Request Approved](https://docs.clickpost.ai/reference/return-request-approved.md): This Webhook is only useful for customers using Clickpost’s managed returns platform to accept customer returns on their website
+- [Return Request Rejected](https://docs.clickpost.ai/reference/return-request-rejected.md): This Webhook is only useful for customers using Clickpost’s managed returns platform to accept customer returns on their website
+- [Returns Polling Delta API](https://docs.clickpost.ai/reference/returns-polling-delta-api.md): The Return Polling Delta API is used to fetch all the return requests raised in the Clickpost system in a 60 minute window. This can be considered as a fallback mechanism to the Return Request Received Webhook mentioned above that is already in place to share this data.
+- [Exchange Webhooks](https://docs.clickpost.ai/reference/exchange-webhooks.md): All the customers who are using Clickpost's Exchange and return module can use this Webhooks to get notifications for exchange-related milestones
+- [Refund Webhooks](https://docs.clickpost.ai/reference/refund-webhooks.md): All the customers who are using ClickPost Returns and Exchanges module to handle refunds can use these webhooks
+- [Pincode to City and State API](https://docs.clickpost.ai/reference/pincode-to-city-and-state-api.md): The API takes the 6 digit Indian pincode and returns the corresponding city and state
+- [Getting Started With Your API](https://docs.clickpost.ai/reference/getting-started-with-your-api.md): This page will help you get started with EDD.
+- [Customer Segmentation](https://docs.clickpost.ai/reference/customer-segmentation.md)
+- [Configure Threshold Values](https://docs.clickpost.ai/reference/configure-threshold-values.md)
+- [Retrieve current threshold values](https://docs.clickpost.ai/reference/retrieve-current-threshold-values.md)
+- [Trigger customer segmentation](https://docs.clickpost.ai/reference/trigger-customer-segmentation.md)
+- [Fetch customer segmentation file](https://docs.clickpost.ai/reference/fetch-customer-segmentation-file.md)
+- [Fetch segment data by customer](https://docs.clickpost.ai/reference/fetch-segment-data-by-customer.md)

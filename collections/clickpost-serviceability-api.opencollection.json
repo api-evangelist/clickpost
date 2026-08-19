@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickPost Cancellation Serviceability API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Serviceability",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check pincode serviceability",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/serviceability/pincode",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check pincode carrier serviceability and pricing."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

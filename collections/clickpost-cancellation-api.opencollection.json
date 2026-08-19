@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickPost Cancellation API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cancellation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Cancel a shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/cancellation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Cancel manifested shipments."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

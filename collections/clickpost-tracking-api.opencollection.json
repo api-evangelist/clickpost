@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickPost Cancellation Tracking API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tracking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Register tracking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/tracking/register",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Register shipments for tracking purposes."
+        },
+        {
+          "info": {
+            "name": "Get tracking status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.clickpost.in/api/v1/tracking/:awb",
+            "params": [
+              {
+                "name": "awb",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch current tracking status using air waybill number."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

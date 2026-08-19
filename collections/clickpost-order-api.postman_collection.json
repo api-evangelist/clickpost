@@ -1,0 +1,336 @@
+{
+  "item": [
+    {
+      "id": "f2238a0c-09c9-4d3a-b16b-0826f9e044ea",
+      "name": "Order",
+      "description": {
+        "content": "Order creation and lookup.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3bce9889-540f-4a07-af9f-5da05b46e505",
+          "name": "Create a single-parcel order",
+          "request": {
+            "name": "Create a single-parcel order",
+            "description": {
+              "content": "Create single-parcel shipment (SPS) orders.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4966\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8e86dd47-3aa8-45f3-bcb2-e5d0d2a14854",
+              "name": "Order created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33989daf-829c-4126-acf0-532fc885617b",
+          "name": "Create a multi-parcel order",
+          "request": {
+            "name": "Create a multi-parcel order",
+            "description": {
+              "content": "Create multi-parcel shipment (MPS) orders.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "order",
+                "mps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 4966\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a72c26b0-6851-4312-8cc1-722bdc7b5311",
+              "name": "MPS Order created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    "mps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": true,\n  \"key_1\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3efaa558-6bbd-469c-b2f4-e50a39a58a11",
+          "name": "Get order details",
+          "request": {
+            "name": "Get order details",
+            "description": {
+              "content": "Retrieve shipment details for a specific order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "order",
+                ":order_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b7b038f-84f2-4a90-95a6-a6f8084fbf4c",
+              "name": "Order details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    ":order_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": true,\n  \"key_1\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.clickpost.in/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0921ab5a-f976-4766-a8f8-72e1019bfbef",
+    "name": "ClickPost Cancellation Order API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation, serviceability, manifesting, pickup scheduling, tracking, proof of delivery, NDR action management, and returns. Authentication is token-based.\n\nContact Support:\n Name: ClickPost Support",
+      "type": "text/plain"
+    }
+  }
+}

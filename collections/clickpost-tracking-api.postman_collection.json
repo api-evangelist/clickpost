@@ -1,0 +1,240 @@
+{
+  "item": [
+    {
+      "id": "fb962001-1c38-4821-be0e-cacff7dcb99d",
+      "name": "Tracking",
+      "description": {
+        "content": "Shipment tracking.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c429b3ec-3cb9-42ed-a8b3-871aea270696",
+          "name": "Register tracking",
+          "request": {
+            "name": "Register tracking",
+            "description": {
+              "content": "Register shipments for tracking purposes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tracking",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": 3740,\n  \"key_1\": 7783\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a8d89007-c30a-4503-89e6-fcf3422f77ff",
+              "name": "Tracking registered",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tracking",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": 202,\n  \"key_1\": 7202,\n  \"key_2\": false,\n  \"key_3\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 202,\n  \"key_1\": 7202,\n  \"key_2\": false,\n  \"key_3\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37c4dcb4-f50f-48c1-bc16-227b1fc4f8e9",
+          "name": "Get tracking status",
+          "request": {
+            "name": "Get tracking status",
+            "description": {
+              "content": "Fetch current tracking status using air waybill number.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tracking",
+                ":awb"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "awb",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22852c20-02c6-4730-b317-4c692b229a7e",
+              "name": "Tracking status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tracking",
+                    ":awb"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "awb",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": 202,\n  \"key_1\": 7202,\n  \"key_2\": false,\n  \"key_3\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.clickpost.in/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "52e7dd4d-4eca-41c3-b7ef-b997c2322668",
+    "name": "ClickPost Cancellation Tracking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation, serviceability, manifesting, pickup scheduling, tracking, proof of delivery, NDR action management, and returns. Authentication is token-based.\n\nContact Support:\n Name: ClickPost Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "ClickPost Cancellation Pickup API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "key",
+      "value": "{{key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pickup",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request a pickup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.clickpost.in/api/v1/pickup-request",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit pickup requests with recommended carriers."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

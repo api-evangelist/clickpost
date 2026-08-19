@@ -1,0 +1,145 @@
+{
+  "item": [
+    {
+      "id": "ee0ad350-6945-4c43-8e1c-6ec5d6b069e2",
+      "name": "Pickup",
+      "description": {
+        "content": "Pickup scheduling.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "20878581-864f-4e55-a2b3-22c2e49fe050",
+          "name": "Request a pickup",
+          "request": {
+            "name": "Request a pickup",
+            "description": {
+              "content": "Submit pickup requests with recommended carriers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pickup-request"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"key_0\": \"string\",\n  \"key_1\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "751082e5-cdeb-41ca-b744-5bbe76faa4d2",
+              "name": "Pickup requested",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pickup-request"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"key_0\": \"string\",\n  \"key_1\": 8224\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": \"string\",\n  \"key_1\": 8224\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.clickpost.in/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fd6f4119-9283-4136-a729-a63cbf366364",
+    "name": "ClickPost Cancellation Pickup API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation, serviceability, manifesting, pickup scheduling, tracking, proof of delivery, NDR action management, and returns. Authentication is token-based.\n\nContact Support:\n Name: ClickPost Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "item": [
+    {
+      "id": "0e968f31-6162-4386-a372-edf02d965279",
+      "name": "Label",
+      "description": {
+        "content": "Shipping labels.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a1e932b-b5c6-4d99-9c86-c1d9d4afb0d1",
+          "name": "Get shipping label",
+          "request": {
+            "name": "Get shipping label",
+            "description": {
+              "content": "Retrieve shipping label for an order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "label",
+                ":order_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "order_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea01586e-a31e-4f59-be5e-26534021d6f9",
+              "name": "Label",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "label",
+                    ":order_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "order_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.clickpost.in/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3ae14f2d-c75d-45a1-9304-eb9ee913661e",
+    "name": "ClickPost Cancellation Label API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation, serviceability, manifesting, pickup scheduling, tracking, proof of delivery, NDR action management, and returns. Authentication is token-based.\n\nContact Support:\n Name: ClickPost Support",
+      "type": "text/plain"
+    }
+  }
+}
