@@ -151,6 +151,9 @@ apis:
   - type: Portal
     url: https://docs.clickpost.ai/
 common:
+  - type: CapabilityMap
+    url: capabilities/clickpost-capability-edges.yml
+    name: ClickPost Business Capability Map
   - type: AgenticAccess
     url: agentic-access/clickpost-agentic-access.yml
   - type: VulnerabilityDisclosure

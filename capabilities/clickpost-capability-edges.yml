@@ -1,0 +1,33 @@
+slug: clickpost
+provider: ClickPost
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Transportation & Logistics
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Tracking
+  spec_file: clickpost-tracking-api-openapi.yml
+  capability_id: BC-2510.20
+  capability_id_l1: BC-2510
+  capability_name: Shipment Tracking Management
+  confidence: 0.9
+  evidence: POST /tracking/register registerTracking; GET /tracking/{awb} getTracking Get tracking status
+  reason: Registering and retrieving shipment tracking status by AWB across carriers is squarely shipment
+    visibility and tracking.
+- tag: Pickup
+  spec_file: clickpost-pickup-api-openapi.yml
+  capability_id: BC-2420.30
+  capability_id_l1: BC-2420
+  capability_name: Pickup and Drayage Operations Management
+  confidence: 0.75
+  evidence: POST /pickup-request requestPickup Request a pickup
+  reason: Scheduling first-mile pickup of goods from the shipper is pickup operations within transport
+    execution.
