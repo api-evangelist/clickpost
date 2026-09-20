@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 2
+edge_count: 4
 edges:
 - tag: Tracking
   spec_file: clickpost-tracking-api-openapi.yml
@@ -31,3 +31,23 @@ edges:
   evidence: POST /pickup-request requestPickup Request a pickup
   reason: Scheduling first-mile pickup of goods from the shipper is pickup operations within transport
     execution.
+- tag: Label
+  spec_file: clickpost-label-api-openapi.yml
+  capability_id: BC-520.50
+  capability_id_l1: BC-520
+  capability_name: Logistics Operations Management
+  confidence: 0.7
+  evidence: GET /label/{order_id}  getLabel  Get shipping label
+  reason: Retrieval of carrier shipping labels is a core outbound transport execution artefact in a logistics
+    aggregation platform.
+  recovered_from: vertical-automotive-mobility-edges.json
+- tag: Recommendation
+  spec_file: clickpost-recommendation-api-openapi.yml
+  capability_id: BC-520.50
+  capability_id_l1: BC-520
+  capability_name: Logistics Operations Management
+  confidence: 0.7
+  evidence: POST /recommendation recommendCarrier "Recommend a carrier"
+  reason: Carrier selection for shipping a parcel is a transport/logistics execution decision, so it sits
+    under Logistics Operations Management. Single generic operation keeps confidence moderate.
+  recovered_from: vertical-automotive-mobility-edges.json
