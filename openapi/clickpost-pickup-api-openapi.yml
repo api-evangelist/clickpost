@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: ClickPost Cancellation Pickup API
+  title: ClickPost Pickup API
   description: ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation, serviceability, manifesting, pickup scheduling, tracking, proof of delivery, NDR action management, and returns. Authentication is token-based.
   version: 1.0.0
   contact:
