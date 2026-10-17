@@ -40,10 +40,10 @@ paths:
                 $ref: '#/components/schemas/GenericResponse'
 components:
   schemas:
-    GenericRequest:
+    GenericResponse:
       type: object
       additionalProperties: true
-    GenericResponse:
+    GenericRequest:
       type: object
       additionalProperties: true
   securitySchemes:
