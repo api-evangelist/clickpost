@@ -1,4 +1,4 @@
-# ClickPost (clickpost)
+# ClickPost
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,66 +66,143 @@
 
 ClickPost is a logistics and supply chain platform that aggregates 500+ carrier integrations, multi-channel customer notifications, and 50+ storefront/OMS/WMS connectors behind a unified REST API. The platform covers carrier recommendation, order creation (single and multi-piece), serviceability, manifesting, pickups, real-time tracking with webhooks, proof of delivery, NDR (non-delivery report) management, returns, and expected delivery date forecasting for both Indian domestic and international shipments.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/clickpost/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/clickpost/refs/heads/main/apis.yml)
+**Areas:** Carrier · Delivery · E-commerce Logistics · Logistics · Returns · Shipping · Supply Chain · Tracking
 
-## Scope
+## ClickPost on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for ClickPost is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/clickpost/](https://apis.io/providers/clickpost/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (7)
 
-- Carriers
-- Delivery
-- E-Commerce Logistics
-- Logistics
-- Returns
-- Shipping
-- Supply Chain
-- Tracking
+- [ClickPost Cancellation API](https://apis.io/apis/clickpost/clickpost-cancellation-api/) — Shipment cancellation.
+- [ClickPost Label API](https://apis.io/apis/clickpost/clickpost-label-api/) — Shipping labels.
+- [ClickPost Order API](https://apis.io/apis/clickpost/clickpost-order-api/) — Order creation and lookup.
+- [ClickPost Pickup API](https://apis.io/apis/clickpost/clickpost-pickup-api/) — Pickup scheduling.
+- [ClickPost Recommendation API](https://apis.io/apis/clickpost/clickpost-recommendation-api/) — Carrier recommendation operations.
+- [ClickPost Serviceability API](https://apis.io/apis/clickpost/clickpost-serviceability-api/) — Pincode and zone serviceability.
+- [ClickPost Tracking API](https://apis.io/apis/clickpost/clickpost-tracking-api/) — Shipment tracking.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-03-01
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### ClickPost API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-ClickPost's REST API provides programmatic access to carrier recommendation, order creation, cancellation, serviceability, manifesting, pickup scheduling, tracking (polling and webhooks), proof of delivery, NDR action management, returns, expected delivery date prediction, PUDO services, and rider/quick-commerce operations. Authentication is token-based.
+- [Clickpost Agentic Access](https://apis.io/agentic-access/clickpost/clickpost-agentic-access/)
 
-- **Human URL:** [https://docs.clickpost.ai/docs/getting-started](https://docs.clickpost.ai/docs/getting-started)
+#### JSON-LD (1)
 
-#### Tags
+Linked-data contexts for the provider's vocabulary.
 
-- Logistics
-- Shipping
-- Tracking
+- [Clickpost Context](https://apis.io/jsonld/clickpost/clickpost-context/)
 
-#### Properties
+#### Collections (8)
 
-- [Documentation](https://docs.clickpost.ai/docs/getting-started)
-- [Portal](https://docs.clickpost.ai/)
-- [OpenAPI](openapi/clickpost-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/clickpost.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/clickpost.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-## Common Properties
+- [ClickPost API](https://apis.io/collections/clickpost/open-clickpost/)
+- [ClickPost Cancellation API](https://apis.io/collections/clickpost/open-clickpost-cancellation-api/)
+- [ClickPost Cancellation Label API](https://apis.io/collections/clickpost/open-clickpost-label-api/)
+- [ClickPost Cancellation Order API](https://apis.io/collections/clickpost/open-clickpost-order-api/)
+- [ClickPost Cancellation Pickup API](https://apis.io/collections/clickpost/open-clickpost-pickup-api/)
+- [ClickPost Cancellation Recommendation API](https://apis.io/collections/clickpost/open-clickpost-recommendation-api/)
+- [ClickPost Cancellation Serviceability API](https://apis.io/collections/clickpost/open-clickpost-serviceability-api/)
+- [ClickPost Cancellation Tracking API](https://apis.io/collections/clickpost/open-clickpost-tracking-api/)
 
-- [GitHub Organization](https://github.com/Clickpost)
-- [LinkedIn](https://www.linkedin.com/company/clickpost1)
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [ClickPost API Rules](https://apis.io/rules/clickpost/clickpost-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Clickpost Authentication](https://apis.io/security/clickpost/clickpost-authentication/)
+- [Clickpost Domain Security](https://apis.io/security/clickpost/clickpost-domain-security/)
+- [Clickpost Vulnerability Disclosure](https://apis.io/security/clickpost/clickpost-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Clickpost Plans Pricing](https://apis.io/plans/clickpost/clickpost-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Clickpost Rate Limits](https://apis.io/rate-limits/clickpost/clickpost-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Clickpost Finops](https://apis.io/finops/clickpost/clickpost-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.clickpost.ai)
 - [Documentation](https://docs.clickpost.ai/)
-- [Carrier  Integrations](https://www.clickpost.ai/carrier-integration)
-- [Privacy Policy](https://www.clickpost.ai/privacy-policy)
-- [Terms of Service](https://www.clickpost.ai/terms-and-conditions)
-- [JSON-LD](json-ld/clickpost-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Spectral Rules](rules/clickpost-rules.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
-- [L L Ms Txt](https://docs.clickpost.ai/llms.txt)
+- [Blog](https://www.clickpost.ai/blog)
+- [Terms of service](https://www.clickpost.ai/terms-and-conditions)
+- [Privacy policy](https://www.clickpost.ai/privacy-policy)
+- [GitHub](https://github.com/Clickpost)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kinlane@gmail.com
+**Kin Score 33.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 69.6 |
+| Contract quality | 50.5 |
+| Contract governance | 11.4 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 28.9 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.8** — Telecommunications
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/clickpost/](https://apis.io/providers/clickpost/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ClickPost: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/clickpost/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
